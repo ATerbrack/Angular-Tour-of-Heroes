@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeroesComponent } from './heroes/heroes.component';
 
 @Component({
   selector: 'app-root', // Name used in index.html to refer to this (app.component)
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeroesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Tour of Heroes'; // "title" as written in html <h1> tag, {{}}
+  title = 'Tour of Heroes'; // "title" to be used in html like {{ title }}
 }
