@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { Hero } from '../hero';
 import { UpperCasePipe, CurrencyPipe } from '@angular/common'; // FIRST, Import this to ts file... 
 import { FormsModule } from '@angular/forms';
+import { HEROES } from '../mock-heroes';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-heroes',
   standalone: true,
-  imports: [ UpperCasePipe, CurrencyPipe, FormsModule, ], // THEN pass it to html file.
+  imports: [ UpperCasePipe, CurrencyPipe, FormsModule, NgFor, ], // THEN pass it to html file.
   templateUrl: './heroes.component.html',
   /*
   Alternatively, inject the html right into the TS.
@@ -16,11 +18,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class HeroesComponent {
 
-  value = 1.23;
-
-  hero: Hero = { 
-    id: 1, 
-    name: 'Storm',
-  };
+  heroes = HEROES;
 
 }
