@@ -31,7 +31,7 @@ export class HeroesComponent {
   constructor(private heroService: HeroService){}
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes); // Subscribe to listen asynchronously to the service
   }
 
   ngOnInit(): void {
